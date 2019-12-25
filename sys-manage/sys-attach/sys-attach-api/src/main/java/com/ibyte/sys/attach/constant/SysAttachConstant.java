@@ -26,4 +26,9 @@ public interface SysAttachConstant {
      * 强制分片文件大小(20MB)
      */
     long FORCE_SLICE_FILE_SIZE = 20L* 1024 * 1024;
+
+    /**
+     * 默认的临时附件超时时间(1天)
+     */
+    Integer ATTACH_TEMP_OVERDUE_SECONDS_DEFAULT = 24 * 60 * 60;
 }

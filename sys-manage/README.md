@@ -10,4 +10,8 @@ sys-manage -- 后台基础服务
 │  │  ├─sys-monitor-api -- api
 │  │  ├─sys-monitor-client -- client
 │  │  ├─sys-monitor-core -- core
+│  │─sys-org -- 组织架构服务
+│  │  ├─sys-org -api -- api
+│  │  ├─sys-org -client -- client
+│  │  ├─sys-org -core -- core
 ```

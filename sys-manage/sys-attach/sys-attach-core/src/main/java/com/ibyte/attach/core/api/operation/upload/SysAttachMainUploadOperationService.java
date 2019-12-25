@@ -12,11 +12,14 @@ import com.ibyte.common.core.util.MimeTypeUtil;
 import com.ibyte.common.exception.KmssServiceException;
 import com.ibyte.common.util.IDGenerator;
 import com.ibyte.common.util.TenantUtil;
+import com.ibyte.framework.config.ApplicationConfigApi;
 import com.ibyte.sys.attach.constant.AttachEffectTypeEnum;
 import com.ibyte.sys.attach.constant.AttachStatusEnum;
+import com.ibyte.sys.attach.constant.SysAttachConstant;
 import com.ibyte.sys.attach.dto.SysAttachMediaSizeVO;
 import com.ibyte.sys.attach.dto.SysAttachUploadBytesVO;
 import com.ibyte.sys.attach.dto.base.SysAttachUploadBaseVO;
+import com.ibyte.sys.attach.dto.config.SysAttachConfigVO;
 import com.ibyte.sys.attach.dto.slice.SysAttachUploadSliceBytesVO;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Optional;
+import java.sql.Timestamp;
 import java.util.function.Function;
 
 /**
@@ -47,6 +50,9 @@ public class SysAttachMainUploadOperationService extends AbstractSysAttachUpload
 
     @Autowired
     private SysAttachSliceUploader sysAttachSliceUploader;
+
+    @Autowired
+    private ApplicationConfigApi applicationConfig;
 
     /**
      * API上传附件
@@ -96,8 +102,6 @@ public class SysAttachMainUploadOperationService extends AbstractSysAttachUpload
                     return null;
                 }
 
-                // TODO 如果是媒体，获取媒体宽高帧率
-
                 // 保存attachFile
                 attachFile = new SysAttachFile();
                 attachFile.setFdId(uploadResultVO.getFileId());
@@ -113,6 +117,7 @@ public class SysAttachMainUploadOperationService extends AbstractSysAttachUpload
                 attachFile.setFdLocation(sysAttachStoreService.getDefaultStoreLocation());
                 attachFile.setFdSysAttachCatalog(uploadResultVO.getSysAttachCatalog());
                 attachFile.setFdSysAttachModuleLocation(uploadResultVO.getSysAttachModuleLocation());
+                // TODO 如果是媒体，获取媒体宽高帧率
                 SysAttachMediaSizeVO mediaSizeVO = this.getMediaSize(uploadBaseVO.getFdFileExtName(), uploadResultVO.getFullPath());
                 if (mediaSizeVO != null) {
                     attachFile.setFdWidth(mediaSizeVO.getWidth());
@@ -121,41 +126,33 @@ public class SysAttachMainUploadOperationService extends AbstractSysAttachUpload
                 sysAttachFileService.add(attachFile);
             }
 
-            // 判断附件ID是否有传入
-            String attachId = uploadBaseVO.getOriginAttachId();
-            if (attachId == null) {
-                // 没有传入附件ID，则新生成附件ID
-                attachId = IDGenerator.generateID();
-            } else {
-                Optional<SysAttachMain> exist = sysAttachService.findById(attachId);
-                if (exist.isPresent()) {
-                    // 如果有传入附件ID，并且附件ID在系统中已存在，
-                    attachId = IDGenerator.generateID();
-                }
-            }
+            // 获取临时文件过期时间配置
+            SysAttachConfigVO configVO = applicationConfig.get(SysAttachConfigVO.class);
+            Integer overdueSeconds = configVO != null ? configVO.getTempOverdueSeconds() : SysAttachConstant.ATTACH_TEMP_OVERDUE_SECONDS_DEFAULT;
+            long overdueMillis = overdueSeconds * 1000L;
 
             // 生成attachMain
-            SysAttachMain attachMain = new SysAttachMain();
+            String attachId = IDGenerator.generateID();
+            SysAttachMain attachMainTemp = new SysAttachMain();
             // 关联已有文件或新创建的文件
-            attachMain.setFdId(attachId);
-            attachMain.setFdSysAttachFile(attachFile);
-            attachMain.setFdFileName(attachFile.getFdFileName());
-            attachMain.setFdFileExtName(attachFile.getFdFileExtName());
-            attachMain.setFdFileSize(attachFile.getFdFileSize());
-            attachMain.setFdCreatorId(attachFile.getFdCreatorId());
-            attachMain.setFdLastModifier(attachFile.getFdLastModifier());
-            attachMain.setFdEntityKey(entityKey);
-            attachMain.setFdEntityName(uploadBaseVO.getFdEntityName());
-            attachMain.setFdEntityId(entityId);
-            attachMain.setFdTenantId(TenantUtil.getTenantId());
-            attachMain.setFdMimeType(MimeTypeUtil.getMimeType(attachFile.getFdFileName() + NamingConstant.DOT + attachFile.getFdFileExtName()));
-            attachMain.setFdExtendInfo(uploadBaseVO.getFdExtendInfo());
-            attachMain.setFdStatus(AttachStatusEnum.VALID);
-            attachMain.setFdEffectType(AttachEffectTypeEnum.PERSISTENT);
-            attachMain.setFdWidth(attachFile.getFdWidth());
-            attachMain.setFdHeight(attachFile.getFdHeight());
-            attachMain.setFdAnonymous(uploadBaseVO.getFdAnonymous());
-            sysAttachService.add(attachMain);
+            attachMainTemp.setFdId(attachId);
+            attachMainTemp.setFdSysAttachFile(attachFile);
+            attachMainTemp.setFdFileName(attachFile.getFdFileName());
+            attachMainTemp.setFdFileExtName(attachFile.getFdFileExtName());
+            attachMainTemp.setFdFileSize(attachFile.getFdFileSize());
+            attachMainTemp.setFdCreatorId(attachFile.getFdCreatorId());
+            attachMainTemp.setFdLastModifier(attachFile.getFdLastModifier());
+            attachMainTemp.setFdEntityName(uploadBaseVO.getFdEntityName());
+            attachMainTemp.setFdTenantId(TenantUtil.getTenantId());
+            attachMainTemp.setFdMimeType(MimeTypeUtil.getMimeType(attachFile.getFdFileName() + NamingConstant.DOT + attachFile.getFdFileExtName()));
+            attachMainTemp.setFdStatus(AttachStatusEnum.VALID);
+            attachMainTemp.setFdEffectType(AttachEffectTypeEnum.TRANSIENT);
+            attachMainTemp.setFdExpirationTime(new Timestamp(System.currentTimeMillis() + overdueMillis));
+            attachMainTemp.setFdExtendInfo(uploadBaseVO.getFdExtendInfo());
+            attachMainTemp.setFdWidth(attachFile.getFdWidth());
+            attachMainTemp.setFdHeight(attachFile.getFdHeight());
+            attachMainTemp.setFdAnonymous(uploadBaseVO.getFdAnonymous());
+            sysAttachService.add(attachMainTemp);
             return attachId;
         } catch (Exception e) {
             throw new KmssServiceException("sys-attach:sys.attach.msg.error.SysAttachWriteFailed", e);

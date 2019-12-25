@@ -12,10 +12,22 @@
     <artifactId>starter-mpass-server</artifactId>
     <dependencies>
         <!-- 基础业务组合 -->
+        <!--############### org ###############-->
         <dependency>
             <groupId>com.ibyte</groupId>
-            <artifactId>sys-monitor-core</artifactId>
+            <artifactId>sys-monitor-org</artifactId>
         </dependency>
+        <!--############### monitor ###############-->
+<!--        <dependency>-->
+<!--            <groupId>com.ibyte</groupId>-->
+<!--            <artifactId>sys-monitor-core</artifactId>-->
+<!--        </dependency>-->
+        <!--############### attach ###############-->
+<!--        <dependency>-->
+<!--            <groupId>com.ibyte</groupId>-->
+<!--            <artifactId>sys-attach-core</artifactId>-->
+<!--        </dependency>-->
+
     </dependencies>
     <build>
         <plugins>
