@@ -15,7 +15,7 @@
         <!--############### org ###############-->
         <dependency>
             <groupId>com.ibyte</groupId>
-            <artifactId>sys-monitor-org</artifactId>
+            <artifactId>sys-org-core</artifactId>
         </dependency>
         <!--############### monitor ###############-->
 <!--        <dependency>-->
