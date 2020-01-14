@@ -6,7 +6,8 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.NotBlank;
 
 /**
- * 字段名称-支持多语言
+ * 名称字段(支持多语言)
+ *
  * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>
  * @since 1.0.1
  */
@@ -24,5 +25,4 @@ public interface FdName4Language extends FdName {
     default String getFdName() {
         return (String) getExtendProps().get("fdName");
     }
-
 }

@@ -26,7 +26,7 @@ import java.util.Map.Entry;
  */
 public class ExtMetadataContributor
 		implements MetadataContributor, MetaConstant {
-	private static final String KEY_EXT_METADATA = "kmss.metadata.ext";
+	private static final String KEY_EXT_METADATA = "mpass.metadata.ext";
 
 	@Override
 	public void contribute(InFlightMetadataCollector metadataCollector,

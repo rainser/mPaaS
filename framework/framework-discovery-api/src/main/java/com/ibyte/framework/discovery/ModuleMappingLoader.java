@@ -20,7 +20,7 @@ public interface ModuleMappingLoader {
     /**
      * 模块映射配置前缀
      */
-    String SVR_PREFIX = "kmss.svr.";
+    String SVR_PREFIX = "mpass.svr.";
 
     /**
      * 加载模块映射信息

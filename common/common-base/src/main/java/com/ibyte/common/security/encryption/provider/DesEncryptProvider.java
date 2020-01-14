@@ -14,7 +14,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 
 /**
- * Des加解密处理组件，兼容原ekp算法
+ * Des加解密处理组件
  * 仅仅在原算法基础上增加了hex处理
  *
  * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>

@@ -1,5 +1,4 @@
 package com.ibyte.sys.org.event;
-
 import com.ibyte.common.core.entity.IEntity;
 import com.ibyte.common.core.event.AbstractEntityEvent;
 

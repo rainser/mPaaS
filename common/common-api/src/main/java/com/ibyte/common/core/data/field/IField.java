@@ -7,9 +7,9 @@ package com.ibyte.common.core.data.field;
  * scale)</li>
  * <li>javax.persistence.ElementCollection：不读取属性</li>
  * <li>javax.persistence.JoinColumn(name, nullable, updatable)</li>
- * <li>javax.persistence.JoinTable(name, joinColumns[0].name,
- * inverseJoinColumns[0].name)</li>
+ * <li>javax.persistence.JoinTable(name, joinColumns[0].name,inverseJoinColumns[0].name)</li>
  * <li>javax.persistence.Lob</li>
+ *
  * <li>javax.persistence.ManyToMany：不读取属性</li>
  * <li>javax.persistence.ManyToOne(fetch, optional)</li>
  * <li>javax.persistence.OrderColumn(name)</li>

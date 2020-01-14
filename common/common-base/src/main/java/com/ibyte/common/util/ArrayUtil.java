@@ -22,21 +22,6 @@ public class ArrayUtil {
     }
 
     /**
-     * 将fromList中的元素添加到toList中，过滤重复值
-     */
-    public static <T> void concatTwoList(List<T> fromList, List<T> toList) {
-        if (fromList == null || toList == null) {
-            return;
-        }
-        for (int i = 0; i < fromList.size(); i++) {
-            T obj = fromList.get(i);
-            if (!toList.contains(obj)) {
-                toList.add(obj);
-            }
-        }
-    }
-
-    /**
      * 将列表的值分批次执行
      */
     public static <T> void batchConsumer(List<T> list, int size,

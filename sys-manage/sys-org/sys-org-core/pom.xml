@@ -17,11 +17,9 @@
             <artifactId>mvn-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!-- 组织架构API -->
         <dependency>
             <groupId>com.ibyte</groupId>
             <artifactId>sys-org-api</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

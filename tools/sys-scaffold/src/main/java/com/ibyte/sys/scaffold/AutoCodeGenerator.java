@@ -406,12 +406,12 @@ public class AutoCodeGenerator {
     }
 
     public static void main(String[] args) {
-        String path = "E:\\M-Pass";
+        String path = "E:\\M-Pass\\sys-manage\\sys-org";
         AutoCodeGenerator generator = AutoCodeGenerator.newBuilder(
                 path,
-                "sys-attach",
-                "xxxxxxx")
-                .author("<a href=\"mailto:shangzhi.ibyte@gmail.com\">iByte</a>").comment("xxxxx")
+                "sys-org",
+                "SysOrgConfig")
+                .author("<a href=\"mailto:shangzhi.ibyte@gmail.com\">iByte</a>").comment("组织架构开关")
                 .ignoreController(false).build();
         generator.generate();
         System.out.println("成功");

@@ -17,5 +17,10 @@
             <artifactId>common-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.ibyte</groupId>
+            <artifactId>sys-org-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

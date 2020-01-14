@@ -1,26 +1,38 @@
 package com.ibyte.component.jpa.contributor;
 
-import com.ibyte.common.util.IDGenerator;
-import com.ibyte.common.util.ReflectUtil;
-import com.ibyte.common.util.StringHelper;
-import com.ibyte.framework.meta.MetaConstant;
-import com.ibyte.framework.meta.MetaProperty;
+import static com.ibyte.component.jpa.HibernateMetadataExtractor.HBMTYPES;
+
+import java.util.Map.Entry;
+
+import javax.persistence.AttributeConverter;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.AnnotationException;
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.relational.Database;
 import org.hibernate.boot.spi.InFlightMetadataCollector;
 import org.hibernate.engine.OptimisticLockStyle;
-import org.hibernate.mapping.*;
+import org.hibernate.mapping.Bag;
+import org.hibernate.mapping.Collection;
+import org.hibernate.mapping.Column;
+import org.hibernate.mapping.List;
+import org.hibernate.mapping.ManyToOne;
+import org.hibernate.mapping.PersistentClass;
+import org.hibernate.mapping.Property;
+import org.hibernate.mapping.RootClass;
+import org.hibernate.mapping.SimpleValue;
+import org.hibernate.mapping.Table;
+import org.hibernate.mapping.Value;
 import org.hibernate.tuple.GenerationTiming;
 import org.hibernate.tuple.ValueGeneration;
 import org.hibernate.tuple.ValueGenerator;
 import org.hibernate.type.descriptor.converter.AttributeConverterTypeAdapter;
 
-import javax.persistence.AttributeConverter;
-import java.util.Map.Entry;
-
-import static com.ibyte.component.jpa.HibernateMetadataExtractor.HBMTYPES;
+import com.ibyte.common.util.IDGenerator;
+import com.ibyte.common.util.ReflectUtil;
+import com.ibyte.common.util.StringHelper;
+import com.ibyte.framework.meta.MetaConstant;
+import com.ibyte.framework.meta.MetaProperty;
 
 /**
  * Hibernate的属性构造解析
@@ -66,7 +78,7 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 生成列表的Value
 	 */
 	private Collection buildCollectionValue(MetaProperty property,
-			HibernatePropertyFeature feature, PersistentClass pclazz) {
+											HibernatePropertyFeature feature, PersistentClass pclazz) {
 		// table：中间表
 		String tableName = StringUtils.replace(feature.getJoinTable(),
 				"{table}", pclazz.getTable().getName());
@@ -112,8 +124,8 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 生成SimpleValue或ManyToOne
 	 */
 	private SimpleValue buildElement(PersistentClass pclazz,
-			MetaProperty property, HibernatePropertyFeature feature,
-			Table table) {
+									 MetaProperty property, HibernatePropertyFeature feature,
+									 Table table) {
 		// 列名，若没有定义则按命名规范创建一个
 		String columnName = feature.getColumn();
 		if (StringUtils.isBlank(columnName)) {
@@ -158,7 +170,8 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 构造SimpleValue
 	 */
 	private SimpleValue buildSimpleValue(Table table, PersistentClass pclazz,
-			MetaProperty property, String columnName) {
+										 MetaProperty property, String columnName) {
+	    // 是否枚举是枚举类型
 		if (MetaConstant.isEnum(property)) {
 			Class<?>[] inners = ReflectUtil
 					.classForName(property.getEnumClass()).getClasses();
@@ -187,7 +200,7 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 构造SimpleValue
 	 */
 	private SimpleValue buildSimpleValue(Table table, String type,
-			String columnName, int len) {
+										 String columnName, int len) {
 		SimpleValue value = new SimpleValue(metadataCollector, table);
 		String typeName = null;
 		for (Entry<String, String> entry : HBMTYPES.entrySet()) {
@@ -205,7 +218,7 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 构造ManyToOne
 	 */
 	private ManyToOne buildManyToOne(MetaProperty property, Table table,
-			String columnName) {
+									 String columnName) {
 		ManyToOne value = new ManyToOne(metadataCollector, table);
 		// value.setPropertyName(property.getName());
 		value.setTypeName(property.getType());
@@ -220,7 +233,7 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 构造列
 	 */
 	private Column buildColumn(String name, int len, SimpleValue value,
-			Table table) {
+							   Table table) {
 		Column column = new Column();
 		column.setName(name);
 		column.setLength(len);
@@ -233,8 +246,8 @@ public class HibernatePropertyParser implements MetaConstant {
 	 * 构造Hibernate的Property
 	 */
 	private Property buildProperty(MetaProperty property,
-			HibernatePropertyFeature feature,
-			PersistentClass pclazz) {
+								   HibernatePropertyFeature feature,
+								   PersistentClass pclazz) {
 		Property prop = new Property();
 		prop.setName(property.getName());
 		if (property.isDynamic()) {
@@ -267,8 +280,6 @@ public class HibernatePropertyParser implements MetaConstant {
 
 	/**
 	 * Value生成策略（不生成）
-	 *
-	 * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>
 	 */
 	private static class NoValueGeneration implements ValueGeneration {
 		private static final long serialVersionUID = -1417962966428301009L;
@@ -295,3 +306,4 @@ public class HibernatePropertyParser implements MetaConstant {
 		}
 	}
 }
+

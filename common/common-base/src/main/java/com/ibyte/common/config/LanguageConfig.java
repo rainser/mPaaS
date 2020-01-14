@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>
  * @Date: 2019-10-11
  */
-@ConfigurationProperties("kmss.lang")
+@ConfigurationProperties("mpass.lang")
 public class LanguageConfig {
     /**
      * 启用多语言

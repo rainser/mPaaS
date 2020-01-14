@@ -62,7 +62,7 @@ public class LanguageMetadataContributor implements MetadataContributor, MetaCon
     private void multilingualProcess(PersistentClass pclazz, MetaEntityImpl entity, String name) {
         Class<?> clazz = ReflectUtil.classForName(pclazz.getClassName());
         PropertyDescriptor[] descs = BeanUtils.getPropertyDescriptors(clazz);
-        for (PropertyDescriptor desc : descs) {
+        for (java.beans.PropertyDescriptor desc : descs) {
             // 判断是否要做多语言
             if (name.equals(desc.getName())) {
                 for (String lang : LangUtil.getSupportCountries()) {

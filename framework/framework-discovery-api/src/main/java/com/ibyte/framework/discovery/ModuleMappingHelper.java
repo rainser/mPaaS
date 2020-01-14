@@ -20,7 +20,7 @@ import java.util.Map;
  * @since 1.0.1
  */
 @Slf4j
-@ConfigurationProperties("kmss")
+@ConfigurationProperties("mpass")
 @RefreshScope
 public class ModuleMappingHelper implements InitializingBean {
     /**

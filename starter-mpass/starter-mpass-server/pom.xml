@@ -18,10 +18,10 @@
             <artifactId>sys-org-core</artifactId>
         </dependency>
         <!--############### monitor ###############-->
-<!--        <dependency>-->
-<!--            <groupId>com.ibyte</groupId>-->
-<!--            <artifactId>sys-monitor-core</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.ibyte</groupId>
+            <artifactId>sys-monitor-core</artifactId>
+        </dependency>
         <!--############### attach ###############-->
 <!--        <dependency>-->
 <!--            <groupId>com.ibyte</groupId>-->

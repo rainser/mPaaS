@@ -17,7 +17,7 @@ import java.util.Map;
  * @Date: 2019-10-11
  */
 @Slf4j
-@ConfigurationProperties("kmss.tenant")
+@ConfigurationProperties("mpass.tenant")
 @RefreshScope
 public class TenantConfig {
 
