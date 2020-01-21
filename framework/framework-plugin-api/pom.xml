@@ -8,9 +8,16 @@
         <version>1.0.1-SNAPSHOT</version>
         <relativePath>../../package/mvn-parent/pom.xml</relativePath>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <artifactId>framework-plugin-api</artifactId>
+    <description>
+        framework-plugin-api-独立提供
+        - 目前软件开发阶段防止期权Copy,谢谢支持~
+        - 关注公众号"码农架构"发送 "mPass"可获取最新更新地址~
+    </description>
+
     <dependencies>
         <dependency>
             <groupId>com.ibyte</groupId>
