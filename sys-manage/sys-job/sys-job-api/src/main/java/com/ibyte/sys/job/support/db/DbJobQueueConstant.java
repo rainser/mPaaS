@@ -12,4 +12,13 @@ public interface DbJobQueueConstant {
     static final int QUERY_SIZE = 1000;
     /** 任务队列长度 */
     static final int QUEUE_SIZE = 500;
+
+    /** 分发器通知主题前缀 */
+    static final String KEY_TOPIC = "JobQueueDistributor:";
+    /** 分发器独占锁前缀 */
+    static final String KEY_DISLOCK = "JobQueueDisLock:";
+    /** 任务执行锁前缀 */
+    static final String KEY_EXELOCK = "JobQueueExeLock:";
+    /** 任务队列前缀 */
+    static final String KEY_QUEUE = "JobQueue:";
 }
