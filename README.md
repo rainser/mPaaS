@@ -41,7 +41,7 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 ![2](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/203723_a461baf2_1468963.png)
 
 ## Project overall architecture diagram
-![4](https://images.gitee.com/uploads/images/2019/1018/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
+![4](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
 
 :anger: :facepunch:  _The system is under development, it is expected to complete the overall architecture in **two months**.
 
@@ -52,7 +52,7 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 - **Flexible use mode**: The framework and components do not have strong dependencies, can be divided and combined, and are flexible and maneuverable. Each component can provide powerful functions independently, and can also cooperate with each other to optimize the user experience and play a greater role.
 
 ## Operation and maintenance architecture diagram
-![5](https://images.gitee.com/uploads/images/2019/1025/005728_9d45ec29_1468963.png "ops.png")
+![5](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## Project detailed deployment diagram
-![6](https://images.gitee.com/uploads/images/2019/1025/005737_ba969737_1468963.png "deploy.png")
+![6](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/005737_ba969737_1468963.png "deploy.png")
