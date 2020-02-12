@@ -7,16 +7,16 @@ English | [中文](/README.cn.md)
 	<a target="_blank" href="https://search.maven.org/search?q=M-PasS">
 		<img src="https://img.shields.io/badge/Maven Central-1.12.0-blue.svg" ></img>
 	</a>
-        <a target="_blank" href="https://gitee.com/ibyte/M-Pass">
+        <a target="_blank" href="https://github.com/lihangqi/mPaaS">
 		<img src="https://img.shields.io/badge/Spring%20Boot-2.0.9.RELEASE-blue" alt="Downloads"/>
 	</a>
-        <a target="_blank" href="https://gitee.com/ibyte/M-Pass">
+        <a target="_blank" href="https://github.com/lihangqi/mPaaS">
 		<img src="https://img.shields.io/badge/Spring%20Cloud-Finchley.SR4-blue" alt="Downloads"/>
 	</a>
 	<a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
 		<img src="https://img.shields.io/badge/JDK-1.8+-green.svg" ></img>
 	</a>
-	<a target="_blank" href="https://gitee.com/ibyte/M-Pass" title="API文档">
+	<a target="_blank" href="https://github.com/lihangqi/mPaaS" title="API文档">
 		<img src="https://img.shields.io/badge/Api Docs-1.12.0-orange.svg" ></img>
 	</a>
 </p>
@@ -35,13 +35,13 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 
 ## Service module division
 **mPaaS background management-object storage service**
-![1](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/202520_300742bc_1468963.png)
+![1](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/202520_300742bc_1468963.png)
 **mPaaS background management-monitoring service**
-![3](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/203652_34bdd173_1468963.png)
-![2](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/203723_a461baf2_1468963.png)
+![3](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/203652_34bdd173_1468963.png)
+![2](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/203723_a461baf2_1468963.png)
 
 ## Project overall architecture diagram
-![4](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
+![4](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
 
 :anger: :facepunch:  _The system is under development, it is expected to complete the overall architecture in **two months**.
 
@@ -52,7 +52,7 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 - **Flexible use mode**: The framework and components do not have strong dependencies, can be divided and combined, and are flexible and maneuverable. Each component can provide powerful functions independently, and can also cooperate with each other to optimize the user experience and play a greater role.
 
 ## Operation and maintenance architecture diagram
-![5](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/005728_9d45ec29_1468963.png "ops.png")
+![5](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## Project detailed deployment diagram
-![6](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/blog_content_pic/005737_ba969737_1468963.png "deploy.png")
+![6](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/005737_ba969737_1468963.png "deploy.png")
