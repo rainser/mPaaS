@@ -14,6 +14,8 @@ import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.ibyte.common.core.entity.TreeEntity.HIERARCHY_INVALID_FLAG;
+
 /**
  * 树形Entity操作，通过依赖注入调用
  *
@@ -58,7 +60,8 @@ public class TreeEntityService {
         Integer newLevel = getTreeLevel(entity);
         Integer oldLevel = entity.getFdTreeLevel() != null ? entity.getFdTreeLevel() : 1;
         entity.setFdTreeLevel(newLevel);
-        if (!isAdd && oldHierarchyId != null && !newHierarchyId.equals(oldHierarchyId)) {
+        //过滤无效的，以及层级id 未变动的
+        if (!isAdd && oldHierarchyId != null  && !HIERARCHY_INVALID_FLAG.equals(oldHierarchyId)  && !newHierarchyId.equals(oldHierarchyId)) {
             // 处理层级ID
             String hql = StringHelper.join("update ",
                     EntityUtil.getEntityClassName(entity),

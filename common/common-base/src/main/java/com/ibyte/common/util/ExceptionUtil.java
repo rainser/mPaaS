@@ -8,6 +8,7 @@ import com.ibyte.common.exception.KmssServiceException;
 import com.ibyte.common.i18n.ResourceUtil;
 import org.springframework.http.HttpStatus;
 
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -51,8 +52,13 @@ public class ExceptionUtil {
             stacks.add(Stack.builder().app(app).code(((KmssException) t).getCode()).message(t.getMessage()).build());
         } else if (t instanceof KmssRuntimeException) {
             stacks.add(Stack.builder().app(app).code(((KmssRuntimeException) t).getCode()).message(t.getMessage()).build());
-        } else {
-            stacks.add(Stack.builder().app(app).code("errors.unkown").message(ResourceUtil.getString("errors.unkownException")).build());
+        } else if(t instanceof NullPointerException){
+            String code = "global.null";
+            StackTraceElement stackTraceElement = t.getStackTrace()[0];
+            String message = MessageFormat.format(ResourceUtil.getString(code), stackTraceElement.getClassName(), stackTraceElement.getMethodName(), stackTraceElement.getLineNumber());
+            stacks.add(Stack.builder().app(app).code(code).message(message).build());
+        }else {
+            stacks.add(Stack.builder().app(app).code("errors.unknown").message(ResourceUtil.getString("errors.unknownException")).build());
         }
 
         if (t instanceof KmssServiceException) {

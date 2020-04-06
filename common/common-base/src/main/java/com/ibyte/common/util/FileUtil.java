@@ -2,6 +2,7 @@ package com.ibyte.common.util;
 
 import com.ibyte.common.exception.FileZipException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -137,19 +138,25 @@ public class FileUtil {
                 throw new FileZipException(" path is not found ");
             }
         }
-        // 将压缩文件内容写入到这个文件中
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, ENCODING));
-             PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile), ENCODING)))
-        ) {
-            String strV;
-            while ((strV = reader.readLine()) != null) {
-                writer.write(strV);
-            }
-            return;
+        try(FileOutputStream fos = new FileOutputStream(targetFile)) {
+            IOUtils.copy(inputStream,fos);
         } catch (Exception e) {
             log.error("生成静态资源错误！path={},fileName={}", destDirPath, fileName, e);
             throw new FileZipException();
         }
+        // 将压缩文件内容写入到这个文件中
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, ENCODING));
+//             PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile), ENCODING)))
+//        ) {
+//            String strV;
+//            while ((strV = reader.readLine()) != null) {
+//                writer.write(strV);
+//            }
+//            return;
+//        } catch (Exception e) {
+//            log.error("生成静态资源错误！path={},fileName={}", destDirPath, fileName, e);
+//            throw new FileZipException();
+//        }
 
     }
 

@@ -11,6 +11,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sys-job-core</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.ibyte</groupId>
+            <artifactId>mvn-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibyte</groupId>
+            <artifactId>sys-job-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
