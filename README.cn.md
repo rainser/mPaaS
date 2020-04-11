@@ -31,18 +31,10 @@
 ## 项目开发更新进度
 ### 如果您觉得有帮助，请点右上角 "Star" 支持一下谢谢
 
-## 服务模块划分
-**mPaaS后台管理-对象存储服务**
-![mPaaS后台管理-对象存储服务](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/202520_300742bc_1468963.png)
-**mPaaS后台管理-监控服务**
-![mPaaS后台管理-监控服务](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/203652_34bdd173_1468963.png)
-![2](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/203723_a461baf2_1468963.png)
-
-
 ## 项目总体架构图
-![项目架构图](https://images.gitee.com/uploads/images/2019/1018/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
+![项目架构图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
 
- :anger:  :facepunch:   _系统处于开发阶段, 预计**两个月**时间完成整体架构体系_
+ :anger:  :facepunch:   _系统处于开发阶段_
 
 **核心功能**：
 - **快速开发**：工程化的开发框架可以自动生成初始化代码，框架还提供模块化开发模式，适用于多人协作开发。
@@ -50,8 +42,22 @@
 - **数字化运营闭环**：所有组件都经历了高并发，大流量的检验，对弱网，保活，容器等都有深度的优化，能够兼容复杂的客户端情况
 - **使用方式灵活**：框架与组件并没有强依赖，可分可合，灵活机动。各组件可以独立的提供强大的功能，也可以互相配合优化使用体验，发挥更大的作用
 
+### 基础业务模块
+- [x] 注册配置服务 mPaaS服务注册、配置中心服务
+- [x] 聚合基础服务 业务聚合服务,可自由服务聚合、独立部署
+- [x] 监控系统服务 监控系统基础业务调整(包含：日志等级调整、基础服务状态与服务使用状态)
+- [x] 对象存储服务 业务服务附件存储(包含：本地，oss、bos、obs、odo、tos)
+- [x] 组织架构服务 组织架构元素（包含：机构、部门、岗位、群组、人员）
+- [ ] 任务调度服务 任务集中调度服务
+
 ## 运维架构图
-![运维架构图](https://images.gitee.com/uploads/images/2019/1025/005728_9d45ec29_1468963.png "ops.png")
+![运维架构图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## 项目详细部署图
-![项目详细部署图](https://images.gitee.com/uploads/images/2019/1025/005737_ba969737_1468963.png "deploy.png")
+![项目详细部署图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "deploy.png")
+
+## 服务简述
+#### 对象存储服务
+![存储机制](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/200848_8ac7f86d_1468963.png "mpaas 存储机制.png")
+#### 组织架构服务
+![组织架构基础数据模型](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/173721_27c0e789_1468963.png "组织架构基础模型.png")

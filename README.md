@@ -33,17 +33,10 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 ## Project development update progress
 ### If you find it helpful, please click "Star" in the upper right corner for support
 
-## Service module division
-**mPaaS background management-object storage service**
-![1](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/202520_300742bc_1468963.png)
-**mPaaS background management-monitoring service**
-![3](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/203652_34bdd173_1468963.png)
-![2](https://oss-weslie.oss-accelerate.aliyuncs.com/data/github_content_pic/203723_a461baf2_1468963.png)
-
 ## Project overall architecture diagram
-![4](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
+![Project overall architecture diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/020143_0d434b4a_1468963.jpeg "mPass_Springcloud微服务架构.jpg")
 
-:anger: :facepunch:  _The system is under development, it is expected to complete the overall architecture in **two months**.
+:anger: :facepunch:  _The system is under development.
 
 **Core functions**:
 - **Quick Development**: The engineering development framework can automatically generate initialization code. The framework also provides a modular development mode, which is suitable for collaborative development by multiple people.
@@ -51,8 +44,22 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 - **Closed loop of digital operation**: All components have undergone high concurrency, high traffic inspection, and have been deeply optimized for weak networks, keep-alives, containers, etc., and are compatible with complex client situations
 - **Flexible use mode**: The framework and components do not have strong dependencies, can be divided and combined, and are flexible and maneuverable. Each component can provide powerful functions independently, and can also cooperate with each other to optimize the user experience and play a greater role.
 
+### Basic Business Module
+-[x] Registration configuration service mPaaS service registration, configuration center service
+-[x] Aggregation basic service Business aggregation service, free service aggregation, independent deployment
+-[x] Monitoring system service Monitoring system basic business adjustment (including: log level adjustment, basic service status and service usage status)
+-[x] Object storage service Business service attachment storage (including: local, oss, bos, obs, odo, tos)
+-[x] Organizational structure services Organizational structure elements (including: institutions, departments, positions, groups, personnel)
+-[ ] Task scheduling service Task centralized scheduling service
+
 ## Operation and maintenance architecture diagram
-![5](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/005728_9d45ec29_1468963.png "ops.png")
+![Operation and maintenance architecture diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## Project detailed deployment diagram
-![6](https://oss-weslie.oss-accelerate.aliyuncs.com/data/blog_content_pic/005737_ba969737_1468963.png "deploy.png")
+![Project detailed deployment diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "deploy.png")
+
+## Service Brief
+#### Object storage service
+![Storage mechanism](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/200848_8ac7f86d_1468963.png "mpaas storage mechanism.png")
+#### Organizational Structure Service
+![Organization Structure Basic Data Model](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/173721_27c0e789_1468963.png "Organization Structure Basic Model.png")
