@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
     <description>
-        m-pass基本库，负责引入公共开源lib库版本定义、maven发布配置、环境配置等职责
+        m-PaaS基本库，负责引入公共开源lib库版本定义、maven发布配置、环境配置等职责
     </description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

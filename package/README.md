@@ -5,5 +5,5 @@
 - [x] package
      - [x] mvn-min     #  单核依赖
      - [x] mvn-parent  #  基础父级依赖
-     - [x] starter-mPass-Nacosx     # 注册中心 & 配置中心
-     - [x] starter-mpass-server         # 程序启动  / 部署上可拆可合 -> api & core || api & client
+     - [x] starter-mPaaS-Nacosx     # 注册中心 & 配置中心
+     - [x] starter-mpaaS-server         # 程序启动  / 部署上可拆可合 -> api & core || api & client

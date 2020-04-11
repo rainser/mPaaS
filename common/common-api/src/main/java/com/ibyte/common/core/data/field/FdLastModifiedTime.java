@@ -42,7 +42,7 @@ public interface FdLastModifiedTime extends IData, IField {
     /**
      * 修改时间更新
      *
-     * @author 叶中奇
+     * @author iByte
      */
     @FieldHandlerExtension
     public class FdLastModifiedTimeHandler implements FieldHandler {

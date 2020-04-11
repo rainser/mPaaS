@@ -51,12 +51,12 @@ public class WebThreadFilter extends CompositeFilterProxy {
     @Override
     protected void handleInnerFilters(List<Filter> innerFilters) {
         super.handleInnerFilters(innerFilters);
-        innerFilters.add(0, new TranVarFilter());
-        innerFilters.add(1, new TenantFilter());
-        innerFilters.add(2, new LangFilter());
-        innerFilters.add(3, new TraceFilter());
-        innerFilters.add(4, new CorsSecurityFilter(corsConfig));
-        innerFilters.add(5, new RsaPublicKeyFilter());
+//        innerFilters.add(0, new TranVarFilter());
+//        innerFilters.add(1, new TenantFilter());
+//        innerFilters.add(2, new LangFilter());
+//        innerFilters.add(3, new TraceFilter());
+//        innerFilters.add(4, new CorsSecurityFilter(corsConfig));
+//        innerFilters.add(5, new RsaPublicKeyFilter());
 
     }
 

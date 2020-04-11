@@ -42,7 +42,7 @@ public interface FdCreateTime extends IData, IField {
     /**
      * 创建时间初始化
      *
-     * @author 叶中奇
+     * @author iByte
      */
     @FieldHandlerExtension
     public class FdCreateTimeHandler implements FieldHandler {

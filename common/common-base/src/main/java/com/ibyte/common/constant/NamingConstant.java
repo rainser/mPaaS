@@ -11,7 +11,7 @@ import com.ibyte.common.util.StringHelper;
 public interface NamingConstant {
 
     /**
-     * m-pass基本包路径
+     * mPaaS基本包路径
      */
     String BASE_PACKAGE = "com.ibyte";
 
@@ -91,7 +91,7 @@ public interface NamingConstant {
     String HEADER_KEY_REQUEST = HEADER_PREFIX + "REQUEST-ID";
 
     /**
-     * 头部信息关键字_当前用户会话key,默认关键字，可通过设定mpass.auth.token.key调整
+     * 头部信息关键字_当前用户会话key,默认关键字，可通过设定mpaas.auth.token.key调整
      */
     String HEADER_KEY_TOKEN = HEADER_PREFIX + "AUTH-TOKEN";
 

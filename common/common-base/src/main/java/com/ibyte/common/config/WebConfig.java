@@ -60,7 +60,6 @@ public class WebConfig {
 
     /**
      * jsonutil 初始化处理
-     * jsonutil 初始化处理
      *
      * @param mapper
      */

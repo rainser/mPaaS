@@ -32,7 +32,7 @@ import java.util.Map;
  */
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(value = "mpass.auth.swaggerEnable", havingValue = "true")
+@ConditionalOnProperty(value = "mpaas.auth.swaggerEnable", havingValue = "true")
 public class SwaggerConfig {
 
     @Resource
@@ -53,7 +53,7 @@ public class SwaggerConfig {
 
         String systemName = "Microservice PaaS";
         ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder()
-                .description("mPass前端后端对应接口")
+                .description("mPaas前端后端对应接口")
                 .version("1.0.1")
                 .license("Code Farmer Framework(iByte) Org.");
 

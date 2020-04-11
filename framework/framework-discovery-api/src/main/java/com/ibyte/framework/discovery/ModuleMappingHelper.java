@@ -20,7 +20,7 @@ import java.util.Map;
  * @since 1.0.1
  */
 @Slf4j
-@ConfigurationProperties("mpass")
+@ConfigurationProperties("mpaas")
 @RefreshScope
 public class ModuleMappingHelper implements InitializingBean {
     /**

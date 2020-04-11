@@ -17,11 +17,11 @@ import java.util.Map;
  * @Date: 2019-10-11
  */
 @Slf4j
-@ConfigurationProperties("mpass.tenant")
+@ConfigurationProperties("mpaas.tenant")
 @RefreshScope
 public class TenantConfig {
 
-    /**s
+    /**
      * 是否启用
      */
     @Setter

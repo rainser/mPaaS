@@ -9,6 +9,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>
  * @since 1.0.1
  */
-@FeignClient(name = "${mpass.svr.framework-plugin.app}", path = "/api/framework-discovery/designElement")
+@FeignClient(name = "${mpaas.svr.framework-plugin.app}", path = "/api/framework-discovery/designElement")
 public interface DesignElementRemoteApiClient extends DesignElementRemoteApi {
 }

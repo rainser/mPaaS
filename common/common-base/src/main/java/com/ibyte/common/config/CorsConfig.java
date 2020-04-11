@@ -20,7 +20,7 @@ import java.util.Collections;
  * @author <a href="mailto:shangzhi.ibyte@gmail.com">iByte</a>
  * @Date: 2019-10-11
  */
-@ConfigurationProperties("mpass.security")
+@ConfigurationProperties("mpaas.security")
 @RefreshScope
 public class CorsConfig implements CorsConfigurationSource {
 
