@@ -56,7 +56,7 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 ![Operation and maintenance architecture diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## Project detailed deployment diagram
-![Project detailed deployment diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "deploy.png")
+![Project detailed deployment diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005737_ba969737_1468963.png "deploy.png")
 
 ## Service Brief
 #### Object storage service

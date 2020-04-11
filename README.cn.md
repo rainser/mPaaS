@@ -54,7 +54,7 @@
 ![运维架构图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "ops.png")
 
 ## 项目详细部署图
-![项目详细部署图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "deploy.png")
+![项目详细部署图](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005737_ba969737_1468963.png "deploy.png")
 
 ## 服务简述
 #### 对象存储服务
