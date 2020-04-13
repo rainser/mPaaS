@@ -45,12 +45,12 @@ Based on SpringBoot2.x and SpringCloud, the front-end and back-end separated mul
 - **Flexible use mode**: The framework and components do not have strong dependencies, can be divided and combined, and are flexible and maneuverable. Each component can provide powerful functions independently, and can also cooperate with each other to optimize the user experience and play a greater role.
 
 ### Basic Business Module
--[x] Registration configuration service mPaaS service registration, configuration center service
--[x] Aggregation basic service Business aggregation service, free service aggregation, independent deployment
--[x] Monitoring system service Monitoring system basic business adjustment (including: log level adjustment, basic service status and service usage status)
--[x] Object storage service Business service attachment storage (including: local, oss, bos, obs, odo, tos)
--[x] Organizational structure services Organizational structure elements (including: institutions, departments, positions, groups, personnel)
--[ ] Task scheduling service Task centralized scheduling service
+- [x] Registration configuration service mPaaS service registration, configuration center service
+- [x] Aggregation basic service Business aggregation service, free service aggregation, independent deployment
+- [x] Monitoring system service Monitoring system basic business adjustment (including: log level adjustment, basic service status and service usage status)
+- [x] Object storage service Business service attachment storage (including: local, oss, bos, obs, odo, tos)
+- [x] Organizational structure services Organizational structure elements (including: institutions, departments, positions, groups, personnel)
+- [ ] Task scheduling service Task centralized scheduling service
 
 ## Operation and maintenance architecture diagram
 ![Operation and maintenance architecture diagram](https://oss-weslie.oss-cn-shanghai.aliyuncs.com/data/github_content_pic/005728_9d45ec29_1468963.png "ops.png")
